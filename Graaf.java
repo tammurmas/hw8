@@ -109,17 +109,13 @@ public class Graaf {
     {
         Graaf karate = new Graaf("karate.txt", "karate_matrix.txt", false);
         
-        for (int i=0; i<karate.adjList.size(); i++)
-        {
-            if(karate.adjList.get(i) != null)
-                System.out.println(i+": "+karate.adjList.get(i).toString());
-        }
+        karate.printAdjList();
         
         TreeMap<Integer, Double> degrees = karate.calcDistr();
         
         System.out.print(degrees.toString());
         
-        karate.matrix.writeMatrixToFile(karate.outputFileName);
+        //karate.matrix.writeMatrixToFile(karate.outputFileName);
         
         //karate.matrix.printAdjList();
         
@@ -141,7 +137,7 @@ public class Graaf {
     {
         TreeMap<Integer, Double> degrees = new TreeMap<Integer, Double>();//we use a TreeMap object so the output would be sorted by key values
         
-        for (int i=0; i<this.size; i++)
+        for (int i=1; i<this.size; i++)
         {
             int count = this.adjList.get(i).size();
             
@@ -157,6 +153,15 @@ public class Graaf {
         }
         
         return degrees;
+    }
+    
+    public void printAdjList()
+    {
+        for (int i=0; i<this.adjList.size(); i++)
+        {
+            if(this.adjList.get(i) != null)
+                System.out.println(i+": "+this.adjList.get(i).toString());
+        }
     }
     
 }
