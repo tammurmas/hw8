@@ -119,7 +119,7 @@ public class Graaf {
         
         System.out.print(degrees.toString());
         
-        //karate.matrix.writeMatrixToFile(karate.outputFileName);
+        karate.matrix.writeMatrixToFile(karate.outputFileName);
         
         //karate.matrix.printAdjList();
         
